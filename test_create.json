@@ -1,0 +1,7 @@
+{
+  "name": "admin",
+  "email": "jane.smith@gov.in",
+  "password": "admin123",
+  "role": "OFFICER",
+  "departmentId": "550e8400-e29b-41d4-a716-446655440000"
+}

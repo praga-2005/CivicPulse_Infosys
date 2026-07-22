@@ -1,0 +1,78 @@
+{
+  "realm": "civicpulse",
+  "enabled": true,
+  "users": [
+    {
+      "username": "citizen",
+      "email": "citizen@example.com",
+      "firstName": "Citizen",
+      "lastName": "User",
+      "enabled": true,
+      "emailVerified": true,
+      "requiredActions": [],
+      "credentials": [
+        { "type": "password", "value": "password", "temporary": false }
+      ],
+      "realmRoles": [ "CITIZEN" ]
+    },
+    {
+      "username": "pragathi@gmail.com",
+      "enabled": true,
+      "email": "pragathi@gmail.com",
+      "firstName": "Pragathi",
+      "lastName": "User",
+      "emailVerified": true,
+      "requiredActions": [],
+      "credentials": [
+        { "type": "password", "value": "pragathi", "temporary": false }
+      ],
+      "realmRoles": [ "CITIZEN" ]
+    },
+    {
+      "username": "officer",
+      "email": "officer@example.com",
+      "firstName": "Officer",
+      "lastName": "User",
+      "enabled": true,
+      "emailVerified": true,
+      "requiredActions": [],
+      "credentials": [
+        { "type": "password", "value": "password", "temporary": false }
+      ],
+      "realmRoles": [ "OFFICER" ]
+    },
+    {
+      "username": "admin@gmail.com",
+      "email": "admin@gmail.com",
+      "firstName": "Admin",
+      "lastName": "User",
+      "enabled": true,
+      "emailVerified": true,
+      "requiredActions": [],
+      "credentials": [
+        { "type": "password", "value": "admin", "temporary": false }
+      ],
+      "realmRoles": [ "ADMIN" ]
+    }
+  ],
+  "roles": {
+    "realm": [
+      { "name": "CITIZEN" },
+      { "name": "OFFICER" },
+      { "name": "ADMIN" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "react-client",
+      "enabled": true,
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [ "*" ],
+      "standardFlowEnabled": true
+    }
+  ]
+}

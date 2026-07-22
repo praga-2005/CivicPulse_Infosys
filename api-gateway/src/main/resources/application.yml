@@ -1,0 +1,59 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+      routes:
+        - id: citizen-service
+          uri: lb://CITIZEN-SERVICE
+          predicates:
+            - Path=/api/citizens/**
+        - id: department-service
+          uri: lb://DEPARTMENT-SERVICE
+          predicates:
+            - Path=/api/departments/**
+        - id: officer-service
+          uri: lb://OFFICER-SERVICE
+          predicates:
+            - Path=/api/officers/**
+        - id: grievance-service
+          uri: lb://GRIEVANCE-SERVICE
+          predicates:
+            - Path=/api/grievances/**
+        - id: notification-service
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/api/notifications/**
+        - id: service-management-service
+          uri: lb://SERVICE-MANAGEMENT-SERVICE
+          predicates:
+            - Path=/api/services/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8085/realms/civicpulse
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
