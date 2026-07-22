@@ -47,6 +47,10 @@ public class ServiceApplication {
     @Column(name = "download_count", nullable = false)
     private Integer downloadCount = 0;
 
+    @Lob
+    @Column(name = "document_base64", columnDefinition="LONGTEXT")
+    private String documentBase64;
+
     // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -74,6 +78,8 @@ public class ServiceApplication {
     public void setApprovedDate(LocalDateTime approvedDate) { this.approvedDate = approvedDate; }
     public Integer getDownloadCount() { return downloadCount; }
     public void setDownloadCount(Integer downloadCount) { this.downloadCount = downloadCount; }
+    public String getDocumentBase64() { return documentBase64; }
+    public void setDocumentBase64(String documentBase64) { this.documentBase64 = documentBase64; }
 
     @PrePersist
     protected void onCreate() {

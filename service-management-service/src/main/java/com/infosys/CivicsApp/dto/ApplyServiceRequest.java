@@ -5,6 +5,7 @@ public class ApplyServiceRequest {
     private String serviceType;
     private String applicantName;
     private String aadhaarNumber;
+    private String documentBase64;
 
     public String getCitizenId() { return citizenId; }
     public void setCitizenId(String citizenId) { this.citizenId = citizenId; }
@@ -14,4 +15,6 @@ public class ApplyServiceRequest {
     public void setApplicantName(String applicantName) { this.applicantName = applicantName; }
     public String getAadhaarNumber() { return aadhaarNumber; }
     public void setAadhaarNumber(String aadhaarNumber) { this.aadhaarNumber = aadhaarNumber; }
+    public String getDocumentBase64() { return documentBase64; }
+    public void setDocumentBase64(String documentBase64) { this.documentBase64 = documentBase64; }
 }

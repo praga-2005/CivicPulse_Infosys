@@ -35,6 +35,7 @@ public class ApplicationService {
         app.setServiceType(request.getServiceType());
         app.setApplicantName(request.getApplicantName());
         app.setAadhaarNumber(request.getAadhaarNumber());
+        app.setDocumentBase64(request.getDocumentBase64());
         app.setStatus("SUBMITTED");
         app.setVerificationStatus("PENDING");
         app.setApprovalStatus("PENDING");
